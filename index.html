@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projek Asal asalan</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 96vh;
+            flex-direction: column;
+        }
+
+        .body {
+            display: flex;
+            width: 300px;
+            background-color: rgb(255, 255, 255);
+        }
+        .name{
+            width: 150px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <div>
+        <table>
+            <tr>
+                <th class="name">Total Antrian Offline</th>
+                <th class="name">Total Antrian Online</th>
+            </tr>
+            <tr>
+                <td class="name"> <span class="TF"></span></td>
+                <td class="name"> <span class="TN"></span></td>
+            </tr>
+            <tr>
+                <th class="name">Nomor Antrian Offline Sekarang</th>
+                <th class="name">Nomor Antrian Online Sekarang</th>
+            </tr>
+            <tr>
+                <td class="name"> <span class="NF"></span></td>
+                <td class="name"> <span class="NN"></span></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    
+    <script>
+        let link ="https://script.google.com/macros/s/AKfycbxkAqQLZ-4ITPNY0LxVaaqYt2wjI3YlUdufevlTcMG5y8CJ6lqz8SbffW3xt6XHjHmCcQ/exec?read";
+         $.get(link, function(data, status){
+            const myArray = data.split(",");
+            $(".TF").text(myArray[0]);
+            $(".TN").text(myArray[1]);
+            $(".NF").text(myArray[2]);
+            $(".NN").text(myArray[3]);
+  });
+        function myScript() {
+            let link ="https://script.google.com/macros/s/AKfycbxkAqQLZ-4ITPNY0LxVaaqYt2wjI3YlUdufevlTcMG5y8CJ6lqz8SbffW3xt6XHjHmCcQ/exec?read";
+         $.get(link, function(data, status){
+            const myArray = data.split(",");
+            $(".TF").text(myArray[0]);
+            $(".TN").text(myArray[1]);
+            $(".NF").text(myArray[2]);
+            $(".NN").text(myArray[3]);
+  });
+}
+
+setInterval(myScript, 10000);
+    </script>
+</body>
+
+</html>

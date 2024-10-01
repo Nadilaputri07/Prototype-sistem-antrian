@@ -102,7 +102,16 @@ setInterval(myScript, 10000);
           <label for="alamat">No HP:</label>
           <textarea class="form-control" id="alamat" name="alamat" rows="3" required></textarea>
         </div>
-
+        <div class="form-group">
+            <label for="alamat">Poli</label>
+            <select class="form-control" id="poli" name="poli">
+                <option value="Poliklinik Penyakit Dalam">Poliklinik Penyakit Dalam</option>
+                <option value="Poliklinik Anak">Poliklinik Anak</option>
+                <option value="Poliklinik Mata">Poliklinik Mata</option>
+                <option value="Poliklinik Saraf">Poliklinik Saraf</option>
+              </select>
+        </div>
+        <hr>
       </form>
       <button type="submit" class="btn btn-primary">Kirim Pendaftaran</button>
       <div type="submit" class="btn btn-primary " onclick="clicks()">Antrian Sekarang</div>
@@ -174,6 +183,7 @@ setInterval(myScript, 10000);
           $(".nama").text(parse[3]);
           $(".email").text(parse[4]);
           $(".alamat").text(parse[5]);
+          $(".poli").text(document.getElementById('poli'));
         });
     });
   });
@@ -181,6 +191,7 @@ setInterval(myScript, 10000);
 <div class="antrian" style="display: none;">
   <div style="width: 400px; text-align: center; font-size: 30px; ">
     <div></div>
+    <div class="poli"></div>
     <div class="nama"></div>
     <div class="email"></div>
     <div class="alamat"></div>

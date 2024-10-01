@@ -164,6 +164,9 @@ setInterval(myScript, 10000);
       var email = emailInput.value
       var alamatInput = document.getElementById('alamat');
       var alamat = alamatInput.value;
+      var e = document.getElementById("poli");
+var value = e.value;
+var text = e.options[e.selectedIndex].text;
       $.post("https://script.google.com/macros/s/AKfycbx71ot09dm0HzDNRZHDfLpxPmvIMk-Q4jMpj7cYs906HUjScuCqvLZDE44l_63FvF933w/exec",
         {
           nama: nama,
@@ -183,7 +186,7 @@ setInterval(myScript, 10000);
           $(".nama").text(parse[3]);
           $(".email").text(parse[4]);
           $(".alamat").text(parse[5]);
-          $(".poli").text(document.getElementById('poli').value);
+          $(".poli").text(text);
         });
     });
   });
